@@ -17,6 +17,18 @@ export const getProducts = createAsyncThunk(
     return data;
   }
 );
+export const getDetails = createAsyncThunk(
+  "products/productDetails",
+  async (id: string) => {
+    const options = {
+      url: `https://fakestoreapi.com/products/${id}`,
+      method: "GET",
+    };
+
+    const { data } = await axios.request(options);
+    return data;
+  }
+);
 const productSlice = createSlice({
   name: "product",
   initialState,
@@ -27,6 +39,12 @@ const productSlice = createSlice({
       state.data = action.payload;
     });
     builder.addCase(getProducts.rejected, (state, action) => {
+      console.log({ state, action });
+    });
+    builder.addCase(getDetails.fulfilled, (state, action) => {
+      state.productDetails = action.payload;
+    });
+    builder.addCase(getDetails.rejected, (state, action) => {
       console.log({ state, action });
     });
   },

@@ -7,11 +7,11 @@ import Loading from "../../../app/loading";
 
 type id = { productId: string };
 export default function page({ params }: { params: Promise<id> }) {
-  let { productId } = use(params);
+  const { productId } = use(params);
   console.log(productId);
   console.log(params);
 
-  let dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   let { productDetails } = useAppSelector((store) => {
     return store.productReducer;

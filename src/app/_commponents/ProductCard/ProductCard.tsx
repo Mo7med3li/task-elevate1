@@ -6,7 +6,8 @@ import React from "react";
 export default function ProductCard({ productInfo }: { productInfo: Product }) {
   const router = useRouter();
 
-  let { id, image, title, price, rating, description, category } = productInfo;
+  const { id, image, title, price, rating, description, category } =
+    productInfo;
   return (
     <div
       className="col-span-12 lg:col-span-6 xl:col-span-2 gap-2 shadow-lg py-3 px-1 cursor-pointer space-y-1"

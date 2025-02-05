@@ -6,7 +6,7 @@ import { getDetails } from "../../../store/features/product.slice";
 import Loading from "../../../app/loading";
 
 type id = { productId: string };
-export default function page({ params }: { params: Promise<id> }) {
+export default function Page({ params }: { params: Promise<id> }) {
   const { productId } = use(params);
   console.log(productId);
   console.log(params);

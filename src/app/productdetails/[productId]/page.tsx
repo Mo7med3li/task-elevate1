@@ -13,7 +13,7 @@ export default function Page({ params }: { params: Promise<id> }) {
 
   const dispatch = useAppDispatch();
 
-  let { productDetails } = useAppSelector((store) => {
+  const { productDetails } = useAppSelector((store) => {
     return store.productReducer;
   });
   useEffect(() => {

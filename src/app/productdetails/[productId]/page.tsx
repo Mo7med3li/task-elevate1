@@ -2,7 +2,8 @@
 import { use, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/store.hook";
 import Image from "next/image";
-import { getDetails } from "@/store/features/product.slice";
+import { getDetails } from "../../../store/features/product.slice";
+import Loading from "../../../app/loading";
 
 type id = { productId: string };
 export default function page({ params }: { params: Promise<id> }) {
@@ -22,7 +23,7 @@ export default function page({ params }: { params: Promise<id> }) {
   return (
     <section>
       {productDetails === null ? (
-        "Loading........"
+        <Loading />
       ) : (
         <>
           <div className="max-w-screen-xl mx-auto p-3 shadow-lg space-y-7 text-center ">

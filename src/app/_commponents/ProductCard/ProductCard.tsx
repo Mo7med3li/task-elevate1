@@ -9,7 +9,7 @@ export default function ProductCard({ productInfo }: { productInfo: Product }) {
   let { id, image, title, price, rating, description, category } = productInfo;
   return (
     <div
-      className="col-span-12 lg:col-span-6 xl:col-span-2 gap-2 shadow-lg py-3 px-1 cursor-pointer"
+      className="col-span-12 lg:col-span-6 xl:col-span-2 gap-2 shadow-lg py-3 px-1 cursor-pointer space-y-1"
       onClick={() => {
         setTimeout(() => {
           router.push(`/productdetails/${id}`);
@@ -28,7 +28,7 @@ export default function ProductCard({ productInfo }: { productInfo: Product }) {
       </h2>
       <h3 className="text-red-300 font-semibold">{category}</h3>
       <p className="line-clamp-2 text-slate-400 ">{description}</p>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-2">
         <span className="font-semibold">Price: {price} EL</span>
         <span className="text-yellow-400">{rating.rate} Rating</span>
       </div>

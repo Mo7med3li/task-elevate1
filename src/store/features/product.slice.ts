@@ -1,5 +1,4 @@
-// import { userState } from "@/types/user.type";
-import { productState } from "@/types/product.type";
+import { productState } from "../../types/product.type";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState: productState = {
@@ -24,10 +23,10 @@ const productSlice = createSlice({
   reducers: {},
   extraReducers: function (builder) {
     builder.addCase(getProducts.fulfilled, (state, action) => {
-      console.log("sa7");
+      console.log({ state, action });
+      state.data = action.payload;
     });
     builder.addCase(getProducts.rejected, (state, action) => {
-      console.log("8lt");
       console.log({ state, action });
     });
   },

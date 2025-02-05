@@ -1,4 +1,17 @@
 export type productState = {
-  data: null | string;
-  productDetails: null | string;
+  data: null | Product[];
+  productDetails: null | Product;
 };
+
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}

@@ -14,7 +14,7 @@ export const getProducts = createAsyncThunk(
       method: "GET",
     };
 
-    let { data } = await axios.request(options);
+    const { data } = await axios.request(options);
     return data;
   }
 );

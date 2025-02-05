@@ -1,11 +1,21 @@
 import { Product } from "../../../types/product.type";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function ProductCard({ productInfo }: { productInfo: Product }) {
+  const router = useRouter();
+
   let { id, image, title, price, rating, description, category } = productInfo;
   return (
-    <div className="col-span-12 lg:col-span-6 xl:col-span-2 gap-2 shadow-lg py-3 px-1">
+    <div
+      className="col-span-12 lg:col-span-6 xl:col-span-2 gap-2 shadow-lg py-3 px-1 cursor-pointer"
+      onClick={() => {
+        setTimeout(() => {
+          router.push(`/productdetails/${id}`);
+        }, 400);
+      }}
+    >
       <Image
         src={image}
         alt=""

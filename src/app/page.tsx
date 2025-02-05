@@ -8,7 +8,7 @@ import { useFormik } from "formik";
 import Loading from "./loading";
 
 export default function Home() {
-  let [searchProducts, setSearchProducts] = useState<Product[] | null>(null);
+  const [searchProducts, setSearchProducts] = useState<Product[] | null>(null);
   const { data } = useAppSelector(function (store) {
     return store.productReducer;
   });
